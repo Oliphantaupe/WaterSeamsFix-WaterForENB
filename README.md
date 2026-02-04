@@ -28,14 +28,34 @@ Water for ENB makes extensive changes to cells - setting water types, water heig
 
 ## Understanding Water for ENB Setups
 
-Water for ENB has two installation modes:
+Water for ENB offers multiple water color variants. You'll have ONE of these main plugins installed:
 
-| Setup | Files You'll Have |
-|-------|-------------------|
-| **Standard** (single color) | `Water for ENB.esp` |
-| **Shades of Skyrim** (regional colors) | `Water for ENB.esm` + `Water for ENB (Shades of Skyrim).esp` |
+### Standard Single-Color Variants
 
-All other `.esp` files (JK's patches, Lux patches, etc.) are **compatibility patches** - they have the main plugin as a master and will be **auto-detected** by the patcher.
+| Water Style | Main Plugin File |
+|-------------|------------------|
+| Standard Blue | `Water for ENB.esp` or `Water for ENB (iNeed).esp` |
+| Wavy Rivers | `Water for ENB (Wavy Rivers).esp` or `Water for ENB (Wavy Rivers) (iNeed).esp` |
+| Vanilla-like | `Water for ENB (Vanilla).esp` or `Water for ENB (Vanilla) (iNeed).esp` |
+| Mineral Teal | `Water for ENB (Mineral Teal).esp` or `Water for ENB (Mineral Teal) (iNeed).esp` |
+| Tropical Green | `Water for ENB (Tropical Green).esp` or `Water for ENB (Tropical Green) (iNeed).esp` |
+
+### Shades of Skyrim (Regional Colors)
+
+Shades of Skyrim uses **two plugins** working together:
+- `Water for ENB.esm` (or `Water for ENB (iNeed).esm`) - base water definitions
+- `Water for ENB (Shades of Skyrim).esp` - **this is your main plugin to select**
+
+Shades of Skyrim also has transparency/darkness variants:
+- `Water for ENB (Shades of Skyrim).esp` - standard
+- `Water for ENB (Shades of Skyrim) (Less Transparent).esp`
+- `Water for ENB (Shades of Skyrim) (Darker).esp`
+
+iNeed versions add `(iNeed)` to the filename.
+
+---
+
+**Compatibility Patches:** All other `.esp` files (JK's patches, Lux patches, etc.) are compatibility patches that have your main plugin as a master. These are **auto-detected** by the patcher - don't select them manually.
 
 ---
 
@@ -43,12 +63,22 @@ All other `.esp` files (JK's patches, Lux patches, etc.) are **compatibility pat
 
 ### Main Water for ENB Plugin
 
-**Select ONLY your main W4ENB plugin:**
+**Select ONLY your main W4ENB plugin** (the one you chose during FOMOD installation):
 
-| Your Setup | What to Select |
-|------------|----------------|
-| Standard water colors | `Water for ENB.esp` |
-| Shades of Skyrim regional colors | `Water for ENB (Shades of Skyrim).esp` |
+**Standard Colors:**
+- `Water for ENB.esp` / `Water for ENB (iNeed).esp`
+- `Water for ENB (Wavy Rivers).esp` / `Water for ENB (Wavy Rivers) (iNeed).esp`
+- `Water for ENB (Vanilla).esp` / `Water for ENB (Vanilla) (iNeed).esp`
+
+**Alternative Colors:**
+- `Water for ENB (Mineral Teal).esp` / `Water for ENB (Mineral Teal) (iNeed).esp`
+- `Water for ENB (Tropical Green).esp` / `Water for ENB (Tropical Green) (iNeed).esp`
+
+**Shades of Skyrim (Regional Colors):**
+- `Water for ENB (Shades of Skyrim).esp`
+- `Water for ENB (Shades of Skyrim) (Less Transparent).esp`
+- `Water for ENB (Shades of Skyrim) (Darker).esp`
+- iNeed versions: add `(iNeed)` before `.esp`
 
 > ⚠️ **DO NOT select patches here** (JK's, Lux, etc.) - they are detected automatically because they have your main plugin as a master.
 
@@ -85,38 +115,42 @@ When enabled, prints every cell/worldspace being patched. Useful for debugging.
 
 ## Quick Setup Guide
 
-### Setup A: Standard Water for ENB
+### Setup A: Single-Color Variants
+
+Applies to: Standard, Wavy Rivers, Vanilla, Mineral Teal, Tropical Green
 
 ```
 Your load order:
-  Water for ENB.esp
+  Water for ENB.esp (or your chosen variant)
   └─ Water for ENB - Patch - JKs Skyrim.esp
   └─ Water for ENB - Patch - Lux.esp
   └─ ... other patches ...
 ```
 
 **Settings:**
-- Main Plugin: `Water for ENB.esp`
-- Include Base ESM: Doesn't matter
+- Main Plugin: Your main W4ENB plugin (e.g., `Water for ENB (Mineral Teal).esp`)
+- Include Base ESM: Doesn't matter (no ESM in these setups)
 - Mods to Skip: Add any patches you want to preserve
 
 ---
 
 ### Setup B: Shades of Skyrim
 
+Applies to: All Shades of Skyrim variants (standard, Less Transparent, Darker)
+
 ```
 Your load order:
   Water for ENB.esm
   └─ Water for ENB - Patch - JKs Skyrim.esp
   └─ Water for ENB - Patch - Lux.esp
-  Water for ENB (Shades of Skyrim).esp
+  Water for ENB (Shades of Skyrim).esp (or Darker/Less Transparent variant)
   └─ Natural Waterfalls - Water for ENB Patch (Shades of Skyrim).esp
   └─ ... other SoS patches ...
 ```
 
 **Settings:**
-- Main Plugin: `Water for ENB (Shades of Skyrim).esp`
-- Include Base ESM: `Enabled` (recommended)
+- Main Plugin: Your Shades variant (e.g., `Water for ENB (Shades of Skyrim) (Darker).esp`)
+- Include Base ESM: `Enabled` (recommended to process both ESM and ESP)
 - Mods to Skip: Add any patches you want to preserve
 
 ---
