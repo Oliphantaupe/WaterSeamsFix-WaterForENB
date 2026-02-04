@@ -1,0 +1,5 @@
+{
+  "Nickname": "Water Seams Fix - Water for ENB",
+  "OneLineDescription": "Forwards Water for ENB water edits to win conflicts with other mods",
+  "LongDescription": "When mods edit cells that Water for ENB also touches, W4ENB's water changes can be lost. This patcher detects conflicts and forwards W4ENB's water type, water height, environment map, and flags to ensure they win.\n\nAutomatically finds all mods that depend on Water for ENB and patches their cells too."
+}
